@@ -1,17 +1,17 @@
 # My_MCP4725 Library
 
-Tato knihovna umožňuje ovládání MCP4725 DAC pomocí standardní knihovny Wire.
+This library allows control of the MCP4725 DAC using the standard Wire library.
 
-## 📌 Funkce:
-- **Podpora jednoho i dvou I²C sběrnic** (Wire + TwoWire)
-- **Nastavení výstupního napětí** 12bitově (0-4095)
-- **Možnost změnit adresu DAC za běhu**
+## 📌 Features:
+- **Supports single and dual I²C buses** (Wire + TwoWire)
+- **12-bit output voltage control** (0-4095)
+- **Ability to change the DAC address at runtime**
 
-## 📦 Instalace:
-1. Stáhněte si ZIP soubor knihovny.
-2. Rozbalte a umístěte složku `My_MCP4725` do `Arduino/libraries/`.
+## 📦 Installation:
+1. Download the ZIP file of the library.
+2. Extract it and place the `My_MCP4725` folder into `Arduino/libraries/`.
 
-## 📋 Použití:
+## 📋 Usage:
 ```cpp
 #include <Wire.h>
 #include "My_MCP4725.h"
@@ -21,19 +21,9 @@ My_MCP4725 dac(0x60);
 void setup() {
     Wire.begin();
     dac.begin();
-    dac.address(0x61); // Změna adresy DAC
+    dac.address(0x62); // Change the DAC address
 }
 
 void loop() {
-    dac.setVoltage(2048); // Nastaví napětí na polovinu rozsahu
+    dac.setVoltage(2048); // Sets the voltage to half of the range
 }
-```
-## 📂 Příklady:
-- `Wire_Only.ino` – pouze Wire
-- `TwoWire_Only.ino` – pouze TwoWire
-- `Wire_and_TwoWire.ino` – kombinace obou
-
-🎯 **Podporované desky:** ATmega328P (Arduino Uno, Nano) a další AVR.
-
----
-📌 **Vytvořil:** @TvojeJméno
