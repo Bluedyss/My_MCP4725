@@ -21,7 +21,7 @@ My_MCP4725 dac(0x60);
 void setup() {
     Wire.begin();
     dac.begin();
-    dac.address(0x62); // Change the DAC address
+    dac.address(0x61); // Change the DAC address
 }
 
 void loop() {
